@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ff77ab;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Logo flutuante */
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Cabeçalho */
+header {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid #ff77ab;
+  padding: 10px 30px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ff77ab;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #ff77ab;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff77ab;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Título */
+.titulo {
+  margin: 30px 0;
+}
+
+.titulo h1 {
+  font-size: 2em;
+  color: #fff;
+  background-color: #ff77ab;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.titulo p {
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Formulário */
+.contato {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ff77ab;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff77ab;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ff77ab;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff4f8a;
+}
+
+/* Informações adicionais */
+.info {
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.info h2 {
+  color: #ff77ab;
+  margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 40px;
+  background: #ff77ab;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
