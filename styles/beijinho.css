@@ -43,6 +43,7 @@ body {
 }
 
 .btn {
+  text-decoration: none;
   display: block;
   width: 100%;
   padding: 14px;
@@ -63,11 +64,17 @@ body {
 
 .btn-red {
   background-color: #b51e22;
+;
 }
 
 .btn-blue {
   background-color: #00c3e3;
 }
+a {
+  text-decoration: none;
+}
+
+
 
 
 
