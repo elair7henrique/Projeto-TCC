@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.donut-img img {
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.card {
+  margin-left: 7rem;
+  background: #fff;
+  padding: 130px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-red {
+  background-color: #b51e22;
+}
+
+.btn-blue {
+  background-color: #00c3e3;
+}
