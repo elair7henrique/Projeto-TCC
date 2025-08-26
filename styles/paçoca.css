@@ -67,3 +67,7 @@ body {
 .btn-blue {
   background-color: #00c3e3;
 }
+
+a {
+  text-decoration: none;
+}
