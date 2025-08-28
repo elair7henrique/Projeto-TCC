@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d54b9c;
+}
+
+.logo span {
+    color: #4d4d4d;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #d54b9c;
+}
+
+/* Seção de pedidos */
+.pedidos {
+    text-align: center;
+    padding: 6rem;
+    background-color: #f5f5f5;
+    font-size: 20px;
+    color: #d54b9c;
+}
+
+.botoes {
+    margin-top: 20px;
+}
+
+.botoes a {
+    display: inline-block;
+    padding: 12px 40px;
+    margin: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+
+.ifood {
+    width: 300px;
+    background-color: #c22b2b;
+}
+.whatsapp {
+    width: 300px;
+    background-color: #c3d420;
+    color: #333;
+}
+
+/* Fundo de donuts */
+.donuts-bg {
+    height: 60px;
+    background-image: url('https://justdonuts.com.br/wp-content/themes/justdonuts/assets/images/bg.png'); /* ou substitua com sua imagem local */
+    background-repeat: repeat-x;
+}
+
+/* Rodapé */
+footer {
+    background-color: #00bcd4;
+    color: white;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem;
+    flex-wrap: wrap;
+}
+
+.logo-footer {
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff69b4;
+}
+
+.logo-footer span {
+    color: #333;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #f06292;
+    padding:6rem;
+    text-align: center;
+    color: white;
+}
+
+.footer-bottom h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom p {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
