@@ -5,6 +5,39 @@ body {
   padding: 40px;
   /* REMOVA display: flex */
 }
+.menu {
+  position: fixed;
+  top: 10px;
+  right: 5px;
+  z-index: 1000;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  margin-left: 20px;
+  color: hotpink; /* Rosa */
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+/* Linha animada abaixo do link ao passar o mouse */
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: hotpink;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
 .grid {
   margin-top: 30rem;
   display: grid;

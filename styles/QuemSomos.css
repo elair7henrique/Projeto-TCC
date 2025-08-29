@@ -158,7 +158,7 @@ nav a::after {
 .introdução{
     margin-top: 40px;
   text-align: justify;
-  line-height: 1.5;
+  line-height: 1;
   padding:50px ;
   font-size: 20px;    
 
@@ -166,9 +166,9 @@ nav a::after {
 
 }
 .texto{
-    font-size: 24px;
+    font-size: 40px;
     margin-top: 40px;
-    color: black
+    color:black
 
 }
 
@@ -179,4 +179,7 @@ nav a::after {
     object-fit: contain;
     /* faz a imagem ter a mesma altura do texto */
     height: 100%;
+  }
+  .titulo__qm{
+    color: black;
   }

@@ -7,7 +7,6 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #ff77ab;
   color: #333;
   text-align: center;
   padding: 20px;
@@ -69,6 +68,15 @@ nav ul li a:hover {
 nav ul li a:hover::after {
   width: 100%;
 }
+ .fundo_contato{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* fica atrás dos donuts */
+  }
 
 /* Título */
 .titulo {
@@ -113,7 +121,7 @@ form {
 .campo label {
   display: block;
   margin-bottom: 5px;
-  color: #ff77ab;
+  color: #333;
   font-weight: bold;
 }
 
@@ -121,7 +129,7 @@ form {
 .campo textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid #ff77ab;
+  border: 2px solid #333;
   border-radius: 8px;
   font-size: 1rem;
 }
@@ -129,7 +137,7 @@ form {
 button {
   width: 100%;
   padding: 12px;
-  background: #ff77ab;
+  background: green;
   border: none;
   color: white;
   font-size: 1rem;
@@ -139,7 +147,7 @@ button {
 }
 
 button:hover {
-  background: #ff4f8a;
+  background: darkgreen;
 }
 
 /* Informações adicionais */
@@ -148,9 +156,22 @@ button:hover {
   background: #fff;
   padding: 20px;
   border-radius: 15px;
-  width: 90%;
-  max-width: 600px;
+  width: 600px;
+  max-width: 900px;
+  height: 300px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  
+}
+p {
+  line-height: 2rem;
+}
+.whatsapp-logo {
+  margin-top: 15px;
+}
+
+.whatsapp-logo img {
+  width: 40px; /* Tamanho da imagem */
+  height: auto;
 }
 
 .info h2 {
