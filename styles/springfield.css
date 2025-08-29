@@ -10,9 +10,10 @@ body {
 }
 
 .container {
+  justify-content: center;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .donut-img img {
@@ -42,6 +43,7 @@ body {
 }
 
 .btn {
+  text-decoration: none;
   display: block;
   width: 100%;
   padding: 14px;
@@ -62,6 +64,7 @@ body {
 
 .btn-red {
   background-color: #b51e22;
+;
 }
 
 .btn-blue {
@@ -70,7 +73,3 @@ body {
 a {
   text-decoration: none;
 }
-
-
-
-   
