@@ -152,9 +152,11 @@ button:hover {
 
 /* Informações adicionais */
 .info {
+  margin-top: 3rem;
+  display: flex; flex-direction: column; 
   margin: 40px auto;
   background: #fff;
-  padding: 20px;
+  padding: -8rem;
   border-radius: 15px;
   width: 600px;
   max-width: 900px;
@@ -162,6 +164,46 @@ button:hover {
   box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
   
 }
+.mensagem_email {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  min-height: 300px;          
+  margin-top: 40px;
+}
+
+.mensagem_email form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;              
+  width: 500px;
+  height: 25rem;
+}
+label {
+  font-weight: bold;
+  margin-left: 40px;
+  display: block;
+  margin-bottom: -15px;
+  font-weight: bold;
+}
+
+
+input[type="text"], input[type="email"], textarea {
+  display: block;
+  width: 300px;
+  margin: 0 auto 10px auto; 
+  font-size: 16px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+textarea {
+  resize: none;  /* desativa o redimensionamento */
+}
+
 p {
   line-height: 2rem;
 }
@@ -170,7 +212,7 @@ p {
 }
 
 .whatsapp-logo img {
-  width: 40px; /* Tamanho da imagem */
+  width: 40px; 
   height: auto;
 }
 
@@ -179,12 +221,4 @@ p {
   margin-bottom: 10px;
 }
 
-/* Rodapé */
-footer {
-  margin-top: 40px;
-  background: #ff77ab;
-  color: white;
-  text-align: center;
-  padding: 15px;
 
-}

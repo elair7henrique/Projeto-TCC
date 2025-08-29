@@ -154,3 +154,48 @@ a {
   margin-top: 10px;
   width: 80px; /* ajuste conforme seu logo do Google */
 }
+/* Centralizar o formulário na tela */
+form {
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto; /* centraliza horizontalmente */
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column; /* coloca os campos em coluna */
+  gap: 15px; /* espaço entre os campos */
+}
+
+/* Estilo dos inputs e textarea */
+form input,
+form textarea {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botão */
+form button {
+  background-color: #008000;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #006400;
+}
+
+/* Rótulos */
+form label {
+  font-weight: bold;
+}
