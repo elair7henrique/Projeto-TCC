@@ -8,6 +8,20 @@ body {
   align-items: center;
   height: 100vh;
 }
+/* Estilo para o ícone do carrinho */
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Garante que o ícone fique acima dos outros elementos */
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 40px; /* Ajuste o tamanho do ícone */
+  height: auto;
+}
+
 
 .container {
   display: flex;

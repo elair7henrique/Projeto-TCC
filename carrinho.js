@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1️⃣ Botões "Adicionar ao carrinho"
     const botoesCarrinho = document.querySelectorAll(".btn-add-cart");
     botoesCarrinho.forEach(botao => {
         botao.addEventListener("click", function(e) {
             e.preventDefault();
 
-            // Pega dados do produto
             const produto = {
                 nome: this.dataset.nome,
                 preco: parseFloat(this.dataset.preco),
@@ -15,10 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 quantidade: 1
             };
 
-            // Pega carrinho do localStorage
             let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-            // Verifica se produto já existe no carrinho
             const existente = carrinho.find(p => p.nome === produto.nome);
             if (existente) {
                 existente.quantidade += 1;
@@ -26,14 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 carrinho.push(produto);
             }
 
-            // Salva e atualiza a tabela
             localStorage.setItem("carrinho", JSON.stringify(carrinho));
             carregarCarrinho();
             atualizarTotais();
+
+            const mensagemSucesso = document.createElement("div");
+            mensagemSucesso.classList.add("mensagem-sucesso");
+            mensagemSucesso.innerText = "Produto adicionado ao carrinho!";
+            document.body.appendChild(mensagemSucesso);
+
+            setTimeout(() => {
+                mensagemSucesso.remove();
+                location.assign("carrinho.html"); 
+            }, 2000);
         });
     });
 
-    // 2️⃣ Delegação de eventos na tabela (alterar quantidade e remover)
     const tabela = document.querySelector("table tbody");
     tabela.addEventListener("click", function(e) {
         const btn = e.target.closest("button");
@@ -42,32 +46,24 @@ document.addEventListener("DOMContentLoaded", function () {
         const tr = btn.closest("tr");
         if (!tr) return;
 
-        // Adicionar quantidade
         if (btn.querySelector("i.bx-plus")) alterarQuantidade(tr, 1);
 
-        // Remover quantidade
         if (btn.querySelector("i.bx-minus")) alterarQuantidade(tr, -1);
 
-        // Remover item
         if (btn.classList.contains("remove")) removerItem(tr);
     });
 
-    // 3️⃣ Carregar carrinho ao abrir a página
     carregarCarrinho();
     atualizarTotais();
 
-    // 4️⃣ Finalizar compra
     const finalizarBtn = document.getElementById("finalizarCompra");
     if (finalizarBtn) {
         finalizarBtn.addEventListener("click", function() {
-            window.location.href = "pagina_final.html"; // destino
+            window.location.href = "pagina_final.html"; 
         });
     }
 });
 
-// ================= Funções ================= //
-
-// Carrega carrinho do localStorage e renderiza tabela
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const tbody = document.querySelector("table tbody");
@@ -102,7 +98,6 @@ function carregarCarrinho() {
     });
 }
 
-// Alterar quantidade de um produto
 function alterarQuantidade(tr, delta) {
     const span = tr.querySelector(".qty span");
     let quantidade = parseInt(span.textContent);
@@ -115,14 +110,12 @@ function alterarQuantidade(tr, delta) {
     atualizarTotais();
 }
 
-// Atualiza o valor da linha
 function atualizarLinha(tr) {
     const preco = parseFloat(tr.querySelector("td:nth-child(2)").textContent.replace("R$", "").replace(",", "."));
     const quantidade = parseInt(tr.querySelector(".qty span").textContent);
     tr.querySelector("td:nth-child(4)").textContent = `R$${(preco * quantidade).toFixed(2)}`;
 }
 
-// Atualiza subtotal e total
 function atualizarTotais() {
     const linhas = document.querySelectorAll("table tbody tr");
     let subtotal = 0;
@@ -138,7 +131,6 @@ function atualizarTotais() {
     if (totalSpan) totalSpan.textContent = `R$${subtotal.toFixed(2)}`;
 }
 
-// Remove produto do carrinho
 function removerItem(tr) {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const nome = tr.querySelector(".title").textContent;
@@ -151,7 +143,6 @@ function removerItem(tr) {
     atualizarTotais();
 }
 
-// Salva carrinho atualizado no localStorage
 function salvarCarrinho() {
     const carrinho = [];
     document.querySelectorAll("table tbody tr").forEach(tr => {
