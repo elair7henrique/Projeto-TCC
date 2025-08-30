@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulário de Pagamento</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles/testepagamento.css" />
+
+  <!-- Biblioteca para gerar QR Code -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- Imagem de fundo -->
+  <img src="assents/ChatGPT Image 27 de ago. de 2025, 18_23_31.png" alt="Fundo" class="fundo"/>
+
+  <!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="QuemSomos.html">Quem Somos</a>
+    <a href="Contato.html">Contato</a>
+  </nav>
+
+  <!-- Formulário -->
+  <div class="container">
+    <form class="formulario" id="formulario">
+      <h2>Preencha seus dados</h2>
+
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="numero">Número de telefone:</label>
+      <input type="tel" id="numero" name="numero" required />
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" required />
+
+      <label for="nascimento">Data de nascimento:</label>
+      <input type="date" id="nascimento" name="nascimento" required />
+
+      <h3>Escolha a forma de pagamento:</h3>
+
+      <div class="pagamento-opcoes">
+        <!-- Opção Pix -->
+        <div class="opcao" id="btn-pix">
+          <img src="assents/pix-logo-png_seeklogo-392002.png" alt="Pix" />
+          <span>PIX</span>
+        </div>
+
+        <!-- Opção Cartão -->
+        <div class="opcao" id="btn-cartao">
+          <img src="assets/cartao-pagamento.webp" alt="Cartão de crédito" />
+          <span>Cartão de crédito</span>
+        </div>
+      </div>
+
+      <!-- Local onde o QR Code será exibido -->
+      <div id="qrcode"></div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Script do QR Code -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="pagamento.js"></script>
+</body>
+</html>
