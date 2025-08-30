@@ -59,7 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalizarBtn = document.getElementById("finalizarCompra");
     if (finalizarBtn) {
         finalizarBtn.addEventListener("click", function() {
-            window.location.href = "pagina_final.html"; 
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+            window.location.href = "testepagamento.html"; // redireciona para a tela de pagamento
         });
     }
 });
