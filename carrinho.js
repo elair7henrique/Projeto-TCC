@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1️⃣ Adicionar produtos ao carrinho
+    // 1️⃣ Botões "Adicionar ao carrinho"
     const botoesCarrinho = document.querySelectorAll(".btn-add-cart");
     botoesCarrinho.forEach(botao => {
         botao.addEventListener("click", function(e) {
             e.preventDefault();
 
+            // Pega dados do produto
             const produto = {
                 nome: this.dataset.nome,
                 preco: parseFloat(this.dataset.preco),
-                quantidade: 1,
-                imagem: this.dataset.imagem
+                imagem: this.dataset.imagem || "",
+                categoria: this.dataset.categoria || "",
+                quantidade: 1
             };
 
-            // Pega o carrinho ou inicia vazio
+            // Pega carrinho do localStorage
             let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-            // Checa se produto já existe
+            // Verifica se produto já existe no carrinho
             const existente = carrinho.find(p => p.nome === produto.nome);
             if (existente) {
                 existente.quantidade += 1;
@@ -24,47 +26,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 carrinho.push(produto);
             }
 
+            // Salva e atualiza a tabela
             localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-            // Só redireciona se não estivermos na página do carrinho
-            if (!window.location.href.includes("carrinho.html")) {
-                window.location.href = "carrinho.html";
-            } else {
-                carregarCarrinho();
-                atualizarTotais();
-            }
+            carregarCarrinho();
+            atualizarTotais();
         });
     });
 
-    // 2️⃣ Carregar produtos do carrinho na tabela (somente se existir tabela)
-    if (document.querySelector("table tbody")) {
-        carregarCarrinho();
-        atualizarTotais();
-    }
+    // 2️⃣ Delegação de eventos na tabela (alterar quantidade e remover)
+    const tabela = document.querySelector("table tbody");
+    tabela.addEventListener("click", function(e) {
+        const btn = e.target.closest("button");
+        if (!btn) return;
 
-    // 3️⃣ Event delegation para +, - e remover
-    const tabela = document.querySelector("table");
-    if (tabela) {
-        tabela.addEventListener("click", function(e) {
-            const btn = e.target.closest("button");
-            if (!btn) return;
+        const tr = btn.closest("tr");
+        if (!tr) return;
 
-            const tr = btn.closest("tr");
-            if (!tr) return;
+        // Adicionar quantidade
+        if (btn.querySelector("i.bx-plus")) alterarQuantidade(tr, 1);
 
-            // Adicionar quantidade
-            if (btn.querySelector(".bx-plus")) alterarQuantidade(tr, 1);
+        // Remover quantidade
+        if (btn.querySelector("i.bx-minus")) alterarQuantidade(tr, -1);
 
-            // Remover quantidade
-            if (btn.querySelector(".bx-minus")) alterarQuantidade(tr, -1);
+        // Remover item
+        if (btn.classList.contains("remove")) removerItem(tr);
+    });
 
-            // Remover item
-            if (btn.classList.contains("remove")) removerItem(tr);
+    // 3️⃣ Carregar carrinho ao abrir a página
+    carregarCarrinho();
+    atualizarTotais();
+
+    // 4️⃣ Finalizar compra
+    const finalizarBtn = document.getElementById("finalizarCompra");
+    if (finalizarBtn) {
+        finalizarBtn.addEventListener("click", function() {
+            window.location.href = "pagina_final.html"; // destino
         });
     }
 });
 
-// Função para carregar carrinho do localStorage
+// ================= Funções ================= //
+
+// Carrega carrinho do localStorage e renderiza tabela
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const tbody = document.querySelector("table tbody");
@@ -78,6 +81,7 @@ function carregarCarrinho() {
                     <img src="${produto.imagem}" alt="${produto.nome}" width="100" height="120">
                     <div class="info">
                         <div class="title">${produto.nome}</div>
+                        <div class="categoria">${produto.categoria || ""}</div>
                     </div>
                 </div>
             </td>
@@ -98,7 +102,7 @@ function carregarCarrinho() {
     });
 }
 
-// Atualiza quantidade de um produto
+// Alterar quantidade de um produto
 function alterarQuantidade(tr, delta) {
     const span = tr.querySelector(".qty span");
     let quantidade = parseInt(span.textContent);
@@ -111,7 +115,7 @@ function alterarQuantidade(tr, delta) {
     atualizarTotais();
 }
 
-// Atualiza total da linha
+// Atualiza o valor da linha
 function atualizarLinha(tr) {
     const preco = parseFloat(tr.querySelector("td:nth-child(2)").textContent.replace("R$", "").replace(",", "."));
     const quantidade = parseInt(tr.querySelector(".qty span").textContent);
@@ -134,7 +138,7 @@ function atualizarTotais() {
     if (totalSpan) totalSpan.textContent = `R$${subtotal.toFixed(2)}`;
 }
 
-// Remove item do carrinho
+// Remove produto do carrinho
 function removerItem(tr) {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const nome = tr.querySelector(".title").textContent;
@@ -147,7 +151,7 @@ function removerItem(tr) {
     atualizarTotais();
 }
 
-// Salva o carrinho atualizado no localStorage
+// Salva carrinho atualizado no localStorage
 function salvarCarrinho() {
     const carrinho = [];
     document.querySelectorAll("table tbody tr").forEach(tr => {
@@ -155,8 +159,9 @@ function salvarCarrinho() {
         const preco = parseFloat(tr.querySelector("td:nth-child(2)").textContent.replace("R$", "").replace(",", "."));
         const quantidade = parseInt(tr.querySelector(".qty span").textContent);
         const imagem = tr.querySelector(".produto img").src;
+        const categoria = tr.querySelector(".categoria") ? tr.querySelector(".categoria").textContent : "";
 
-        carrinho.push({ nome, preco, quantidade, imagem });
+        carrinho.push({ nome, preco, quantidade, imagem, categoria });
     });
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
