@@ -80,6 +80,11 @@ table{
 
 }
 .produto{
+  width: 100px;
+  height: 120px;
+  object-fit: cover; /* mantém proporção sem deformar */
+  border-radius: 6px;
+
     display: flex;
     align-items: center;
 
