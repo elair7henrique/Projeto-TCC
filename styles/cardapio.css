@@ -1,10 +1,9 @@
-
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   padding: 40px;
-  /* REMOVA display: flex */
 }
+
 .menu {
   position: fixed;
   top: 10px;
@@ -16,12 +15,11 @@ body {
   position: relative;
   text-decoration: none;
   margin-left: 20px;
-  color: hotpink; /* Rosa */
+  color: hotpink;
   font-weight: bold;
   font-size: 16px;
   padding: 5px 0;
 }
-
 
 .menu a::after {
   content: '';
@@ -42,15 +40,14 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000; 
+  z-index: 1000;
   cursor: pointer;
 }
 
 .cart-icon img {
-  width: 40px; /* Ajuste o tamanho do ícone */
+  width: 40px;
   height: auto;
 }
-
 
 .grid {
   margin-top: 30rem;
@@ -62,8 +59,9 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .produto {
-  width: 250px;   
+  width: 250px;
   height: 250px;
   background: #fff;
   border: 1px solid #ddd;
@@ -78,8 +76,10 @@ body {
 }
 
 .produto img {
-  width: 50rem;
-  height: auto;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
@@ -88,13 +88,6 @@ body {
   font-weight: bold;
   color: #444;
   margin: 0;
-}
-.produto img {
-  width: 100%;
-  height: 150px;       /* altura fixa para todas as imagens */
-  object-fit: cover;   /* garante que a imagem preencha sem distorcer */
-  border-radius: 8px;
-  margin-bottom: 10px;
 }
 
 .produto h4 {
@@ -105,17 +98,18 @@ body {
 a {
   text-decoration: none;
 }
-  .fundo_rosa{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
-  }
-.imagem_cardapio{
-  
+
+.fundo_rosa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.imagem_cardapio {
   display: block;
   margin: 0 auto;
   width: 800px;
@@ -124,12 +118,11 @@ a {
   top: 28%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-
 }
+
 .card_depoimento {
   max-width: 400px;
-  margin: 350px auto 80px; /* top, right, bottom, left */
+  margin: 350px auto 80px;
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 10px;
@@ -137,8 +130,9 @@ a {
   text-align: center;
   font-family: sans-serif;
   position: relative;
-  left: -22.5rem; /* negativo move para a esquerda */
+  left: -22.5rem;
 }
+
 .card_depoimento h2 {
   color: #2f52b2;
   font-weight: bold;
@@ -166,24 +160,22 @@ a {
 
 .card_depoimento img {
   margin-top: 10px;
-  width: 80px; /* ajuste conforme seu logo do Google */
+  width: 80px;
 }
-/* Centralizar o formulário na tela */
+
 form {
   max-width: 500px;
   width: 90%;
-  margin: 40px auto; /* centraliza horizontalmente */
+  margin: 40px auto;
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-
   display: flex;
-  flex-direction: column; /* coloca os campos em coluna */
-  gap: 15px; /* espaço entre os campos */
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Estilo dos inputs e textarea */
 form input,
 form textarea {
   padding: 12px;
@@ -194,7 +186,6 @@ form textarea {
   box-sizing: border-box;
 }
 
-/* Botão */
 form button {
   background-color: #008000;
   color: white;
@@ -209,7 +200,95 @@ form button:hover {
   background-color: #006400;
 }
 
-/* Rótulos */
 form label {
   font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .imagem_cardapio {
+    width: 90%;
+    height: auto;
+  }
+
+  .card_depoimento {
+    left: 0;
+    margin-top: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 50px;
+  }
+
+  .imagem_cardapio {
+    top: 24%;
+  }
+
+  .card_depoimento {
+    margin: 300px auto 70px;
+    max-width: 90%;
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu a {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .cart-icon img {
+    width: 35px;
+  }
+
+  .imagem_cardapio {
+    width: 95%;
+    top: 22%;
+  }
+
+  .card_depoimento {
+    margin: 280px auto 60px;
+    padding: 20px;
+  }
+
+  form {
+    padding: 25px;
+  }
+
+  form button {
+    font-size: 15px;
+    padding: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu a {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+
+  .cart-icon img {
+    width: 30px;
+  }
+
+  .imagem_cardapio {
+    width: 90%;
+    top: 20%;
+  }
+
+  .card_depoimento {
+    margin: 260px auto 50px;
+    padding: 15px 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

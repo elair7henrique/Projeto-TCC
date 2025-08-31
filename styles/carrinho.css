@@ -1,226 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-*{  margin: 0;
-    padding: 0;
-}
-body{
-    background-color: #f6f6f6;
-    font-family:'lato', sans-serif;
-
-    
->header{
-    background-color:black;
-    color: white;
-    font-size: 24px;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-
-}
-> main{
-    background-color: #fff;
-    padding: 0 30px 30px;
-.titulo_pagina{
-    font-size: 30px;
-    padding: 50px 0;
-    text-align: center;
-
-}
-.content{
-    display: flex;
-    
-section{
-    flex: 1;
-}
-aside{
-    
-    min-width: 250px;
-
- }
-}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #f6f6f6;
+  font-family: 'Lato', sans-serif;
 }
-button{
-    cursor: pointer;
-    font-family:'lato', sans-serif;
+
+header {
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
-table{
-    width: 100%; 
-    border-collapse:collapse ;
-
-    thead{
-        tr{
-            border-bottom: 3px solid #ccc;
-            
-            th{
-            
-                text-align: left;
-                padding-bottom: 10px;
-                text-transform: uppercase;
-                color: #666;
-            }
-        }
-
-    }
-    tbody{
-        tr{
-            border-bottom:3px solid#eee ;
-
-            &:last-child{
-                border:0;
-            }
-            td{
-                padding: 30px 0;
-            }
-        }
-
-    }
-
+main {
+  background-color: #fff;
+  padding: 0 30px 30px;
 }
-.produto{
+
+.titulo_pagina {
+  font-size: 30px;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.content section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content aside {
+  min-width: 250px;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead tr {
+  border-bottom: 3px solid #ccc;
+}
+
+table thead th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+
+table tbody tr:last-child {
+  border: 0;
+}
+
+table td {
+  padding: 30px 0;
+}
+
+.produto {
+  display: flex;
+  align-items: center;
+}
+
+.produto img {
   width: 100px;
   height: 120px;
-  object-fit: cover; /* mantém proporção sem deformar */
+  object-fit: cover;
   border-radius: 6px;
-
-    display: flex;
-    align-items: center;
-
-img{
-    border-radius: 6px;
 }
 
-.info{
-    margin-left: 20px;
-    .title{
-        font-size: 20px;
-        margin-bottom: 10px;
-        
-    }
-    .categoria{
-        color: #666;
-    }
-}    
+.produto .info {
+  margin-left: 20px;
 }
-.qty{
-    background-color: #eee;
-    display: inline-flex;
-    padding: 0 0;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 60px;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30px;
 
-    span{
-        margin: 0 10px;
-    }
-
-    button{
-        display: flex;
-        align-items: center;
-        background: transparent;
-        border: 0;
-        padding: 0 10px;
-        font-size: 20px;
-        height: 100%;
-        
-
-        &:hover{
-            background: #ddd;
-
-
-        }
-    }
+.produto .title {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.remove{
-    background-color: #eee;
-    border: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.produto .categoria {
+  color: #666;
+}
+
+.qty {
+  background-color: #eee;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+
+.qty span {
+  margin: 0 10px;
+}
+
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background-color: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.remove:hover {
+  background: #ddd;
+}
+
+aside {
+  margin-left: 30px;
+}
+
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #555;
+}
+
+aside .box header {
+  padding: 15px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+aside .box .info > div:last-child {
+  margin: 0;
+}
+
+aside .box .info button {
+  color: green;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+aside .box .info button i {
+  font-size: 18px;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  background: #ddd;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside > button {
+  border: 0;
+  padding: 20px;
+  color: white;
+  background: green;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+aside > button:hover {
+  background: darkgreen;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+  }
+
+  aside {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo_pagina {
+    font-size: 26px;
+    padding: 40px 0;
+  }
+
+  table td {
+    padding: 20px 0;
+  }
+
+  .produto .title {
+    font-size: 18px;
+  }
+
+  .produto .categoria {
+    font-size: 14px;
+  }
+
+  aside .box .info {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  aside .box footer {
+    font-size: 16px;
+  }
+
+  aside > button {
+    font-size: 15px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
     font-size: 20px;
-    
-      &:hover{
-            background: #ddd;
+    padding: 15px 0;
+  }
 
- }
-}
-aside{
-    margin-left: 30px;
-    .box{
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
+  .titulo_pagina {
+    font-size: 22px;
+    padding: 30px 0;
+  }
 
-        background: #eee;
-        color: #555;
+  .produto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-        header{
-            padding: 15px;
-            font-size: 18px;
-            border-bottom: 1px solid #ccc;
-        }
-        .info{
-            padding: 20px;
-            font-size: 16px;
-            > div{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                color: #333;
+  .produto .info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-                &:last-child{
-                    margin: 0;
-                }
-            }
-            button{
-                color: green;
-                background: transparent;
-                border: 0;
-                display: flex;
-                align-items: center;
-                font-size: 16;
+  .qty {
+    min-width: 50px;
+    height: 28px;
+  }
 
-                i{
-                    font-size: 18px;
+  .qty button {
+    font-size: 18px;
+    padding: 0 8px;
+  }
 
-                }
+  .remove {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+  }
 
+  aside .box header {
+    font-size: 16px;
+    padding: 12px;
+  }
 
-            }
-        }
-        footer{
-            padding: 15px 20px;
-            background: #ddd;
-            font-size: 18px;
-            display: flex;
-            justify-content: space-between;
+  aside .box .info {
+    font-size: 14px;
+    padding: 10px;
+  }
 
-        }
-    }
-   > button{
-        border: 0;
-        padding: 20px;
-        color: white;
-        background: green;
-        display: block;
-        width: 100%;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 16px;
+  aside .box footer {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
 
-
-        &:hover{
-            background:darkgreen;
-
-
-        }
-
-    }
+  aside > button {
+    font-size: 14px;
+    padding: 14px;
+  }
 }

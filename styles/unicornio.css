@@ -8,23 +8,33 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .cart-icon {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000; /* Garante que o ícone fique acima dos outros elementos */
+  z-index: 1000;
   cursor: pointer;
 }
 
 .cart-icon img {
-  width: 40px; /* Ajuste o tamanho do ícone */
+  width: 40px;
   height: auto;
 }
+
 .container {
-  justify-content: center;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .donut-img img {
@@ -33,12 +43,12 @@ body {
 }
 
 .card {
-  margin-left: 7rem;
   background: #fff;
-  padding: 130px;
+  padding: 80px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   max-width: 400px;
+  width: 80%;
 }
 
 .card h2 {
@@ -54,9 +64,8 @@ body {
 }
 
 .btn {
-  text-decoration: none;
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 14px;
   margin-bottom: 15px;
   border: none;
@@ -75,12 +84,64 @@ body {
 
 .btn-red {
   background-color: #b51e22;
-;
 }
 
 .btn-blue {
   background-color: #00c3e3;
 }
+
 a {
   text-decoration: none;
+}
+
+/* Notebook (até 1200px) */
+@media (max-width: 1200px) {
+  .card {
+    padding: 60px;
+  }
+
+  .donut-img img {
+    max-width: 500px;
+  }
+}
+
+/* Tablet (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 40px;
+    margin: 0 auto;
+  }
+
+  .donut-img img {
+    max-width: 100%;
+  }
+}
+
+/* Celular (até 480px) */
+@media (max-width: 480px) {
+  .cart-icon img {
+    width: 32px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 12px;
+  }
 }

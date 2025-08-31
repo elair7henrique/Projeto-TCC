@@ -1,201 +1,147 @@
-
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: 40px;
-  /* REMOVA display: flex */
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.menu {
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cart-icon {
   position: fixed;
-  top: 10px;
-  right: 5px;
+  top: 20px;
+  right: 20px;
   z-index: 1000;
+  cursor: pointer;
 }
 
-.menu a {
-  position: relative;
-  text-decoration: none;
-  margin-left: 20px;
-  color: hotpink; /* Rosa */
-  font-weight: bold;
-  font-size: 16px;
-  padding: 5px 0;
+.cart-icon img {
+  width: 40px;
+  height: auto;
 }
 
-/* Linha animada abaixo do link ao passar o mouse */
-.menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: hotpink;
-  transition: width 0.3s ease-in-out;
-}
-
-.menu a:hover::after {
-  width: 100%;
-}
-
-.grid {
-  margin-top: 30rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 70px;
-  max-width: 1000px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.produto {
-  width: 250px;   
-  height: 250px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  text-align: center;
+.container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 20px;
 }
 
-.produto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.donut-img img {
+  max-width: 600px;
+  border-radius: 10px;
 }
 
-.produto img {
-  width: 50rem;
-  height: auto;
-  margin-bottom: 10px;
+.card {
+  background: #fff;
+  padding: 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 80%;
 }
 
-.produto h3 {
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: block;
+  width: 90%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 25px;
   font-size: 16px;
   font-weight: bold;
-  color: #444;
-  margin: 0;
-}
-.produto img {
-  width: 100%;
-  height: 150px;       /* altura fixa para todas as imagens */
-  object-fit: cover;   /* garante que a imagem preencha sem distorcer */
-  border-radius: 8px;
-  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
 }
 
-.produto h4 {
-  font-size: 16px;
-  color: #333;
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-red {
+  background-color: #b51e22;
+}
+
+.btn-blue {
+  background-color: #00c3e3;
 }
 
 a {
   text-decoration: none;
 }
-  .fundo_rosa{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
+
+/* Notebook (até 1200px) */
+@media (max-width: 1200px) {
+  .card {
+    padding: 60px;
   }
-.imagem_cardapio{
-  
-  display: block;
-  margin: 0 auto;
-  width: 800px;
-  height: 300px;
-  position: absolute;
-  top: 28%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
-
-}
-.card_depoimento {
-  max-width: 400px;
-  margin: 350px auto 80px; /* top, right, bottom, left */
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  font-family: sans-serif;
-  position: relative;
-  left: -22.5rem; /* negativo move para a esquerda */
-}
-.card_depoimento h2 {
-  color: #2f52b2;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
+  .donut-img img {
+    max-width: 500px;
+  }
 }
 
-.card_depoimento h3 {
-  font-weight: bold;
-  margin: 10px 0;
-  font-size: 18px;
+/* Tablet (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 40px;
+    margin: 0 auto;
+  }
+
+  .donut-img img {
+    max-width: 100%;
+  }
 }
 
-.card_depoimento p {
-  margin: 8px 0;
-  color: #444;
-  font-size: 15px;
-}
+/* Celular (até 480px) */
+@media (max-width: 480px) {
+  .cart-icon img {
+    width: 32px;
+  }
 
-.card_depoimento .estrelas {
-  font-size: 22px;
-  color: gold;
-  margin: 10px 0;
-}
+  .card {
+    padding: 25px;
+  }
 
-.card_depoimento img {
-  margin-top: 10px;
-  width: 80px; /* ajuste conforme seu logo do Google */
-}
-/* Centralizar o formulário na tela */
-form {
-  max-width: 500px;
-  width: 90%;
-  margin: 40px auto; /* centraliza horizontalmente */
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  .card h2 {
+    font-size: 20px;
+  }
 
-  display: flex;
-  flex-direction: column; /* coloca os campos em coluna */
-  gap: 15px; /* espaço entre os campos */
-}
+  .card p {
+    font-size: 14px;
+  }
 
-/* Estilo dos inputs e textarea */
-form input,
-form textarea {
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Botão */
-form button {
-  background-color: #008000;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #006400;
-}
-
-/* Rótulos */
-form label {
-  font-weight: bold;
+  .btn {
+    font-size: 14px;
+    padding: 12px;
+  }
 }
