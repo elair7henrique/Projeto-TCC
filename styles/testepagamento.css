@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #fdfdfd;
@@ -7,16 +13,19 @@ body {
   height: 100vh;
   margin: 0;
 }
-  .fundo{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
-  }
-  .menu {
+
+/* Evita redimensionamento da imagem de fundo */
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.menu {
   position: fixed;
   top: 10px;
   right: 5px;
@@ -27,12 +36,11 @@ body {
   position: relative;
   text-decoration: none;
   margin-left: 20px;
-  color: hotpink; /* Rosa */
+  color: hotpink;
   font-weight: bold;
   font-size: 16px;
   padding: 5px 0;
 }
-
 
 .menu a::after {
   content: '';
@@ -53,8 +61,9 @@ body {
   background: #fff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   width: 380px;
+  max-width: 100%;
 }
 
 .titulo {
@@ -72,6 +81,15 @@ h2 {
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Impede alteração de tamanho de imagens internas */
+.opcoes-pagamento img {
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
 }
 
 .formulario label {
@@ -93,10 +111,12 @@ h2 {
 .linha {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .linha div {
   flex: 1;
+  min-width: 45%;
 }
 
 .botao {
@@ -115,3 +135,97 @@ h2 {
 .botao:hover {
   background-color: #b02a55;
 }
+
+/* Responsividade */
+
+/* Notebook (até 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    width: 360px;
+  }
+
+  .menu a {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+}
+
+/* Tablet (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .menu {
+    top: 15px;
+    right: 10px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .botao {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Celular (até 480px) */
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    height: auto;
+  }
+
+  .menu {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .menu a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 13px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .formulario input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .botao {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .linha {
+    flex-direction: column;
+  }
+
+  .linha div {
+    min-width: 100%;
+  }
+}
+
