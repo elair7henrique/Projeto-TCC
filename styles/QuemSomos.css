@@ -71,14 +71,14 @@
   
   nav a {
     text-decoration: none;
-    color: #e65c94;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
   }
   
   nav a:hover {
-    color: #e65c94;
+    color: #fff;
   }
   nav a {
     position: relative;

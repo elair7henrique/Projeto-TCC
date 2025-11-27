@@ -42,8 +42,8 @@ body {
 
 /* Cabeçalho */
 header {
-  background: rgba(255, 255, 255, 0.8);
-  border-bottom: 2px solid #ff77ab;
+  background:black;
+  border-bottom: 2px solid black;
   padding: 10px 30px;
 }
 
@@ -57,7 +57,7 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #ff77ab;
+  color: white;
   font-weight: bold;
   position: relative;
   transition: color 0.3s ease;
@@ -70,12 +70,12 @@ nav ul li a::after {
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background: #ff77ab;
+  background: #fff;
   transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ff77ab;
+  color:#fff;
 }
 
 nav ul li a:hover::after {
@@ -90,7 +90,7 @@ nav ul li a:hover::after {
 .titulo h1 {
   font-size: 2em;
   color: #fff;
-  background-color: #ff77ab;
+  background-color: black;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 10px;
