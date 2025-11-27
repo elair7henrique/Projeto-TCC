@@ -1,185 +1,176 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .fundo{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
-  }
-  
-
-.incio__texto{
-    text-align: center;
-    margin-top: 60px;
-    font-size: 2.5em;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px #e65c94;
-    letter-spacing: 1px;
-    word-spacing: 5px;
-    line-height: 1.6;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#paragrafo__quem__somos{
-  font-size: 1.5em;
-  margin: 20px;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-  body {
-    font-family: 'Arial', sans-serif;
-    
-  }
-  
-  /* LOGO redonda flutuando fora do header */
-  .logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 20;
-  }
-  
-  .logo img {
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* HEADER com menu no canto superior direito */
-  header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 30px 40px;
-    background-color: #fff;
-    position: relative;
-    z-index: 10;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin-top: 10px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #fff;
-  }
-  nav a {
-    position: relative;
-    text-decoration: none;
-    color: #ff77ab;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
-  /* Sublinhado bonito */
-nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: #ff77ab;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Quando passa o mouse */
-  nav a:hover::after {
-    transform: scaleX(1);
-  }
-  
-  /* HERO (área principal com imagem de fundo) */
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px;
-    background-image: url("/imagem/Fundo de donuts.png"); /* imagem de fundo rosa */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    min-height: 80vh;
-}
- body{
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
- }
+  box-sizing: border-box;
+}
 
-.container{
+/* IMAGEM DE FUNDO – agora mostrando o topo (rosto das pessoas) */
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* MOSTRA O ROSTO */
+  z-index: -1;
+}
+
+/* TEXTO INICIAL */
+.incio__texto {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px #e65c94;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* PARÁGRAFO QUEM SOMOS */
+#paragrafo__quem__somos {
+  font-size: 1.5em;
+  margin: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
+}
+
+.logo img {
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 30px 40px;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+/* MENU */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #ff77ab;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Linha de hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #ff77ab;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-image: url("/imagem/Fundo de donuts.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-height: 80vh;
+}
+
+/* CONTAINER DA PÁGINA */
+.container {
   display: flex;
   height: 100vh;
 }
 
-.introdução, .imagem{
+/* COLUNAS */
+.introdução, .imagem {
   width: 50%;
   padding: 40px;
-  box-sizing: auto;
+  box-sizing: border-box;
 }
-.fundo{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
-  }
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* fica atrás dos donuts */
-  }
-  
 
-.introdução{
-    margin-top: 40px;
+/* TEXTO INTRODUÇÃO */
+.introdução {
+  margin-top: 40px;
   text-align: justify;
   line-height: 1;
-  padding:50px ;
-  font-size: 20px;    
-
-
-
-}
-.texto{
-    font-size: 40px;
-    margin-top: 40px;
-    color:black
-
+  padding: 50px;
+  font-size: 20px;
 }
 
+.texto {
+  font-size: 10px;
+  margin-top: 10px;
+  color: white;
+}
+.grupo-botoes {
+  display: flex;
+  gap: 80px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 20px; /* AQUI CRIA ESPAÇO ENTRE OS BOTÕES */
+  color: white;
+  background-color: #ff77ab;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  text-decoration: none;
+  
+}
 
+/* IMAGEM DO LADO DO TEXTO */
 .imagem img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    /* faz a imagem ter a mesma altura do texto */
-    height: 100%;
-  }
-  .titulo__qm{
-    color: black;
-  }
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TÍTULO QUEM SOMOS */
+.titulo__qm {
+  color: black;
+}
