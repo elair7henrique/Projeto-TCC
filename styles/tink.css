@@ -1,6 +1,14 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+
+  /* 🔥 IMAGEM DE FUNDO ADICIONADA */
   background-image: url('/imagens/fundo\ produtos.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* 🔥 FIM */
+
   margin: 0;
   padding: 0;
   display: flex;
