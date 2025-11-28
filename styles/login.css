@@ -1,0 +1,108 @@
+/* Fonte futurista parecida com a da logo */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../imagens/fundo-real-estilo-dark.jpg') no-repeat center center/cover;
+    background-color: #0a0a0a; /* fallback */
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fundo escuro translúcido elegante */
+.container {
+    backdrop-filter: blur(6px);
+    background-color: rgba(0,0,0,0.65);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.08);
+}
+
+.login-box {
+    width: 350px;
+    text-align: center;
+}
+
+/* Logo estilizada */
+.logo {
+    font-size: 38px;
+    margin-bottom: 25px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Título */
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #111;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: white;
+}
+
+/* Botão */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Texto de cadastro */
+.cadastro {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.cadastro a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.cadastro a:hover {
+    text-decoration: underline;
+}

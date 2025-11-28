@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../imagens/fundo-real-estilo-dark.jpg') no-repeat center center/cover;
+    background-color: #0a0a0a;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+.cadastro-box {
+    width: 380px;
+    text-align: center;
+}
+
+/* LOGO */
+.logo {
+    font-size: 38px;
+    margin-bottom: 25px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* TÍTULO */
+.cadastro-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #111;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: white;
+}
+
+/* BOTÃO */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* TEXTO LOGIN */
+.login {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.login a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
