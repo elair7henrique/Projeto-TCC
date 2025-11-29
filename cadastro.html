@@ -61,6 +61,27 @@
     </div>
 
 <script>
+    
+async function cadastrar() {
+    const dados = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        senha: document.getElementById("senha").value,
+        cpf: document.getElementById("cpf").value,
+        telefone: document.getElementById("telefone").value
+    };
+
+    const req = await fetch("https://SEU_SERVIDOR/cadastro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+    });
+
+    const res = await req.json();
+    alert(res.mensagem);
+}
+
+
     // ============================
     // MÁSCARA CPF
     // ============================

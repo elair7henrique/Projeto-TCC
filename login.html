@@ -39,6 +39,21 @@
     </div>
 
 <script>
+    async function login() {
+    const dados = {
+        email: document.getElementById("email").value,
+        senha: document.getElementById("senha").value
+    };
+
+    const req = await fetch("https://SEU_SERVIDOR/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+    });
+
+    const res = await req.json();
+    alert(res.mensagem);
+}
 // ===========================
 // Validação de email
 // ===========================
