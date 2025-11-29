@@ -1,9 +1,86 @@
+/* ---------------------------------------------------------
+   ESTILO GERAL
+--------------------------------------------------------- */
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   padding: 40px;
 }
 
+/* ---------------------------------------------------------
+   PERFIL COM PRIMEIRA LETRA DO NOME
+--------------------------------------------------------- */
+.perfil-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000;
+}
+
+.icone-perfil {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #111, #222);
+  color: #ff2b2b;
+  font-weight: bold;
+  font-size: 28px;
+  font-family: "Orbitron", sans-serif; /* estilo futurista */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
+.icone-perfil:hover {
+  transform: scale(1.05);
+}
+
+/* MENU DO PERFIL */
+.perfil-menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: white;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #333;
+  font-size: 14px;
+}
+
+.perfil-menu p {
+  margin: 8px 0;
+}
+
+.perfil-menu button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #ff3b3b;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.perfil-menu button:hover {
+  background: #cc0000;
+}
+
+.perfil-menu.ativo {
+  display: block;
+}
+
+/* ---------------------------------------------------------
+   MENU SUPERIOR
+--------------------------------------------------------- */
 .menu {
   position: fixed;
   top: 10px;
@@ -15,10 +92,11 @@ body {
   position: relative;
   text-decoration: none;
   margin-left: 20px;
-  color:#ccc;
+  color: #ccc;
   font-weight: bold;
   font-size: 16px;
   padding: 5px 0;
+  font-family: "Orbitron", sans-serif; /* deixa mais futurista */
 }
 
 .menu a::after {
@@ -36,6 +114,9 @@ body {
   width: 100%;
 }
 
+/* ---------------------------------------------------------
+   CARRINHO
+--------------------------------------------------------- */
 .cart-icon {
   position: fixed;
   top: 20px;
@@ -48,6 +129,10 @@ body {
   width: 40px;
   height: auto;
 }
+
+/* ---------------------------------------------------------
+   PRODUTOS
+--------------------------------------------------------- */
 
 .grid {
   margin-top: 30rem;
@@ -68,11 +153,12 @@ body {
   border-radius: 12px;
   text-align: center;
   padding: 20px;
+  transition: 0.25s ease;
 }
 
 .produto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .produto img {
@@ -88,17 +174,22 @@ body {
   font-weight: bold;
   color: #444;
   margin: 0;
+  font-family: "Orbitron", sans-serif;
 }
 
 .produto h4 {
   font-size: 16px;
   color: #333;
+  font-family: "Orbitron", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
 
+/* ---------------------------------------------------------
+   FUNDO
+--------------------------------------------------------- */
 .fundo_rosa {
   position: fixed;
   top: 0;
@@ -120,99 +211,13 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.card_depoimento {
-  max-width: 400px;
-  margin: 350px auto 80px;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  font-family: sans-serif;
-  position: relative;
-  left: -22.5rem;
-}
-
-.card_depoimento h2 {
-  color: #2f52b2;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.card_depoimento h3 {
-  font-weight: bold;
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.card_depoimento p {
-  margin: 8px 0;
-  color: #444;
-  font-size: 15px;
-}
-
-.card_depoimento .estrelas {
-  font-size: 22px;
-  color: gold;
-  margin: 10px 0;
-}
-
-.card_depoimento img {
-  margin-top: 10px;
-  width: 80px;
-}
-
-form {
-  max-width: 500px;
-  width: 90%;
-  margin: 40px auto;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-form input,
-form textarea {
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-form button {
-  background-color: #008000;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #006400;
-}
-
-form label {
-  font-weight: bold;
-}
-
+/* ---------------------------------------------------------
+   RESPONSIVO
+--------------------------------------------------------- */
 @media (max-width: 1200px) {
   .imagem_cardapio {
     width: 90%;
     height: auto;
-  }
-
-  .card_depoimento {
-    left: 0;
-    margin-top: 320px;
   }
 }
 
@@ -225,12 +230,6 @@ form label {
   .imagem_cardapio {
     top: 24%;
   }
-
-  .card_depoimento {
-    margin: 300px auto 70px;
-    max-width: 90%;
-    left: 0;
-  }
 }
 
 @media (max-width: 768px) {
@@ -239,27 +238,9 @@ form label {
     margin-left: 15px;
   }
 
-  .cart-icon img {
-    width: 35px;
-  }
-
   .imagem_cardapio {
     width: 95%;
     top: 22%;
-  }
-
-  .card_depoimento {
-    margin: 280px auto 60px;
-    padding: 20px;
-  }
-
-  form {
-    padding: 25px;
-  }
-
-  form button {
-    font-size: 15px;
-    padding: 11px;
   }
 }
 
@@ -269,26 +250,8 @@ form label {
     margin-left: 10px;
   }
 
-  .cart-icon img {
-    width: 30px;
-  }
-
   .imagem_cardapio {
     width: 90%;
     top: 20%;
-  }
-
-  .card_depoimento {
-    margin: 260px auto 50px;
-    padding: 15px 15px;
-  }
-
-  form {
-    padding: 20px;
-  }
-
-  form button {
-    font-size: 14px;
-    padding: 10px;
   }
 }

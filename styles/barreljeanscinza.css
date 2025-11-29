@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
+  background-image: url('/imagens/fundo\ produtos.png');
   margin: 0;
   padding: 0;
   display: flex;
@@ -145,6 +145,3 @@ a {
     padding: 12px;
   }
 }
-
-
-   

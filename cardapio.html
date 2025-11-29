@@ -1,82 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cardápio de Donuts</title>
-  <link rel="stylesheet" href="styles/cardapio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - SevenLight</title>
+
+    <!-- CSS DOS PRODUTOS -->
+    <link rel="stylesheet" href="styles/cardapio.css">
+
+    <!-- CSS DO PERFIL (NOVO) -->
+    <link rel="stylesheet" href="styles/perfil.css">
+
+    <!-- Fonte estilo futurista -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="QuemSomos.html">Quem Somos</a>
-    <a href="Contato.html">Contato</a>
-  </div>
 
-  
-  <img src="produtos/fundo 1.png" alt="" class="imagem_cardapio">
-  <img src="produtos/fundo principal.jpg" alt="Fundo " class="fundo_rosa">
+    <!-- ÍCONE DO PERFIL COM A PRIMEIRA LETRA -->
+    <div id="profile-icon"></div>
 
-
-  <div class="grid">
-    <div class="produto">
-      <a href="baggyPreta.html"><img src="produtos/calça baggy preta.webp" alt=""></a>
-      <h3>.</h3>
-    </div>
- 
-    <div class="produto">
-      <a href="camuflada.html"><img src="produtos/calca camuflada.jpg" alt=""></a>
-      <h3>.</h3>
+    <!-- MENU DO PERFIL -->
+    <div id="profile-menu">
+        <h3>Meu Perfil</h3>
+        <p><strong>Nome:</strong> <span id="userName">Carregando...</span></p>
+        <p><strong>Email:</strong> <span id="userEmail">Carregando...</span></p>
+        <button id="logoutBtn">Sair</button>
     </div>
 
+    <!-- MENU SUPERIOR -->
+    <div class="menu">
 
-    <div class="produto">
-      <a href="barrelclara.html"><img src="produtos/calça barrel jeans clara.PNG" alt=""></a>
-      <h3>.</h3>
+        <a href="QuemSomos.html">Quem Somos</a>
+        <a href="Contato.html">Contato</a>
+        <a href="especiais.html">T-Shirts</a>
     </div>
 
+    <!-- FUNDOS -->
+    <img src="produtos/fundo 1.png" alt="" class="imagem_cardapio">
+    <img src="produtos/fundo principal.jpg" alt="Fundo" class="fundo_rosa">
 
-    <div class="produto">
-      <a href="barrelcinza.html"><img src="produtos/calça barrel jeans cinza.PNG" alt=""></a>
-      <h3>.</h3>
+    <!-- GRID DE PRODUTOS -->
+    <div class="grid">
+
+        <div class="produto">
+            <a href="baggyPreta.html"><img src="produtos/calça baggy preta.webp" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="camuflada.html"><img src="produtos/calca camuflada.jpg" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="barrelclara.html"><img src="produtos/calça barrel jeans clara.PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="barrelcinza.html"><img src="produtos/calça barrel jeans cinza.PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="sarjacomestampa.html"><img src="produtos/calça baggy em sarja com estampa abstrata.PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="sarjalavagem.html"><img src="produtos/calça baggy em sarja estonada com lavagem .PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="jeansazul.html"><img src="produtos/calça baggy jeans azul.PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="jeansgrafite.html"><img src="produtos/Calça Super Baggy em Jeans com Estampa Grafite Preto.PNG" alt=""></a>
+        </div>
+
+        <div class="produto">
+            <a href="cinzacustura.html"><img src="imagens/calça baggy cinza com costuras.webp" alt=""></a>
+        </div>
+
     </div>
 
+    <!-- SCRIPT DO PERFIL -->
+    <script>
+        // Mostra / oculta o menu
+        document.getElementById("profile-icon").addEventListener("click", () => {
+            const menu = document.getElementById("profile-menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        });
 
-    <div class="produto">
-      <a href="sarjacomestampa.html"><img src="produtos/calça baggy em sarja com estampa abstrata.PNG" alt=""></a>
-      <h3>.</h3>
-    </div>
-    
-    
+        // Nome e email salvos
+        const nome = localStorage.getItem("usuario_nome") || "Usuário";
+        const email = localStorage.getItem("usuario_email") || "Email não encontrado";
 
+        // Coloca primeira letra do nome no ícone
+        const primeiraLetra = nome.charAt(0).toUpperCase();
+        document.getElementById("profile-icon").textContent = primeiraLetra;
 
-    <div class="produto">
-      <a href="sarjalavagem.html"><img src="produtos/calça baggy em sarja estonada com lavagem .PNG" alt=""></a>
-      <h3>.</h3>
-    </div>
+        // Preenche o menu
+        document.getElementById("userName").textContent = nome;
+        document.getElementById("userEmail").textContent = email;
 
+        // Botão de sair
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("usuario_nome");
+            localStorage.removeItem("usuario_email");
+            localStorage.removeItem("usuario_logado");
+            window.location.href = "login.html";
+        });
+    </script>
 
-    <div class="produto">
-      <a href="jeansazul.html"><img src="produtos/calça baggy jeans azul.PNG" alt=""></a>
-      <h3>. </h3>
-    </div>
-
-      <div class="produto">
-      <a href="jeansgrafite.htm"><img src="produtos/Calça Super Baggy em Jeans com Estampa Grafite Preto.PNG" alt=""></a>
-      <h3>.</h3>
-     </div>
-
-
-       <div class="produto">
-      <a href="cinzacustura.html"><img src="imagens/calça baggy cinza com costuras.webp" alt=""></a>
-      <h3>. </h3>
-    </div>
-
-      
-  
-      </div>
-
-  
- 
 </body>
+
 </html>

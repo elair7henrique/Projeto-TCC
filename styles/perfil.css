@@ -1,0 +1,68 @@
+/* ÍCONE DO PERFIL */
+#profile-icon {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
+    cursor: pointer;
+    z-index: 999;
+    user-select: none;
+    border: 2px solid #222;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* MENU */
+#profile-menu {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    width: 230px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    display: none;
+    z-index: 998;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    font-family: "Orbitron", sans-serif;
+}
+
+#profile-menu h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+#profile-menu p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #ddd;
+}
+
+#logoutBtn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px;
+    background: red;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    font-family: "Orbitron", sans-serif;
+}
+
+#logoutBtn:hover {
+    background: darkred;
+}

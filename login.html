@@ -16,7 +16,7 @@
 
             <h2>Login</h2>
 
-            <form>
+            <form id="formLogin">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Digite seu email" required>
@@ -37,6 +37,57 @@
         </div>
 
     </div>
+
+<script>
+// ===========================
+// Validação de email
+// ===========================
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// ===========================
+// LOGIN
+// ===========================
+document.getElementById("formLogin").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+
+    // valida email
+    if (!validarEmail(email)) {
+        alert("Digite um email válido!");
+        return;
+    }
+
+    // pega usuários salvos
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // procura usuário
+    const usuarioEncontrado = usuarios.find(
+        u => u.email === email && u.senha === senha
+    );
+
+    if (!usuarioEncontrado) {
+        alert("Email ou senha incorretos!");
+        return;
+    }
+
+    // ====================================================
+    // SALVA USUÁRIO LOGADO PARA O PERFIL NO CARDÁPIO
+    // ====================================================
+    localStorage.setItem("usuario_nome", usuarioEncontrado.nome);
+    localStorage.setItem("usuario_email", usuarioEncontrado.email);
+
+    // também salva o usuário completo (opcional)
+    localStorage.setItem("usuario_logado", JSON.stringify(usuarioEncontrado));
+
+    alert("Login realizado com sucesso!");
+    window.location.href = "cardapio.html"; // sua página de produtos
+});
+</script>
 
 </body>
 </html>
